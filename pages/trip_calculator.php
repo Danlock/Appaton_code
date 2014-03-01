@@ -44,160 +44,181 @@
 			</div>
 			
 			</br>
-		
-		</br>
-		<div class="row">
-			<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Vehicle CLASS </p> </div>
-			<div class="col-md-3">  
-			<?php
-				$col = "CLASS";
-				$q = "SELECT DISTINCT $col FROM $tableName";
-				$r = mysql_query($q,$dbc);
-				if($r)
-				{
-					echo "<select name=\"$tableName\">\n";
-					echo "<option value=''> </option>";
-						while ($row = mysql_fetch_array($r))
-						{
-							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-						}
-											echo "</select>";	
-										} 
-											?>
-			</div>
-				
-			<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Engine Size </p> </div>
-			<div class="col-md-3">
-			<?php
-				$col = "ENG";
-				$q = "SELECT DISTINCT $col FROM $tableName";
-				$r = mysql_query($q,$dbc);
-				if($r)
-				{
-					echo "<select name=\"$tableName\">\n";
-					echo "<option value=''> </option>";
-						while ($row = mysql_fetch_array($r))
-						{
-						echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-						}
-											echo "</select>";	
-										} 
-											?>
-						
-					</div>
-				</div>
-				
-				
-				
-				</br>
-				
-				<div class="row">
-					<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> BRAND </p> </div>
-					<div class="col-md-3">
-						<?php
-						$col = "BRAND";
+			
+			</br>
+			<div class="row">
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Vehicle CLASS </p> </div>
+				<div class="col-md-3">
+					<?php
+						$col = "CLASS";
 						$q = "SELECT DISTINCT $col FROM $tableName";
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
 							echo "<select name=\"$tableName\">\n";
-							echo "<option value=''> </option>";
+								
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
+									while ($row = mysql_fetch_array($r))
+									{
+										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									}
+														echo "</select>\n";
+						}
+					?>
+				</div>
+				
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Engine Size </p> </div>
+				<div class="col-md-3">
+					<?php
+						$col = "ENG";
+						$q = "SELECT DISTINCT $col FROM $tableName";
+						$r = mysql_query($q,$dbc);
+						if($r)
+						{
+							echo "<select name=\"$tableName\">\n";
+								
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
+									while ($row = mysql_fetch_array($r))
+									{
+									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									}
+														echo "</select>";
+												}
+					?>
+					
+				</div>
+			</div>
+			
+			
+			
+			</br>
+			
+			<div class="row">
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> BRAND </p> </div>
+				<div class="col-md-3">
+					<?php
+					$col = "BRAND";
+					$q = "SELECT DISTINCT $col FROM $tableName";
+					$r = mysql_query($q,$dbc);
+					if($r)
+					{
+						echo "<select name=\"$tableName\">\n";
+							
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
 								while ($row = mysql_fetch_array($r))
 								{
 									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
 								}
-											echo "</select>";	
-										} 
-											?>
-						</div>
+											echo "</select>";
+									}
+					?>
+				</div>
+				
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> CYLINDERS </p> </div>
+				<div class="col-md-3">
+					<?php
+					$col = "CYLINDERS";
+					$q = "SELECT DISTINCT $col FROM $tableName";
+					$r = mysql_query($q,$dbc);
+					if($r)
+					{
+					echo "<select name=\"$tableName\">\n";
 						
-						<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> CYLINDERS </p> </div>
-						<div class="col-md-3">
-							<?php
-							$col = "CYLINDERS";
-							$q = "SELECT DISTINCT $col FROM $tableName";
-							$r = mysql_query($q,$dbc);
-							if($r)
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
+							while ($row = mysql_fetch_array($r))
 							{
-							echo "<select name=\"$tableName\">\n";
-							echo "<option value=''> </option>";
+							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+							}
+										echo "</select>";
+								}
+					?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> TRANSMISSION </p> </div>
+				<div class="col-md-3">
+					<?php
+					$col = "TRANS";
+					$q = "SELECT DISTINCT $col FROM $tableName";
+					$r = mysql_query($q,$dbc);
+					if($r)
+					{
+						echo "<select name=\"$tableName\">\n";
+							
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
 								while ($row = mysql_fetch_array($r))
 								{
-								echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
 								}
-											echo "</select>";	
-										} 
-											?>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> TRANSMISSION </p> </div>
-							<div class="col-md-3">
-								<?php
-								$col = "TRANS";
-								$q = "SELECT DISTINCT $col FROM $tableName";
-								$r = mysql_query($q,$dbc);
-								if($r)
+									echo "</select>";
+							}
+					?>
+				</div>
+				
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> FUEL TYPE </p> </div>
+				<div class="col-md-3">
+					<?php
+					$col = "FUEL";
+					$q = "SELECT DISTINCT $col FROM $tableName";
+					$r = mysql_query($q,$dbc);
+					if($r)
+					{
+					echo "<select name=\"$tableName\">\n";
+						
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
+							while ($row = mysql_fetch_array($r))
+							{
+							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+							}
+								echo "</select>";
+						}
+					?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> MODEL </p> </div>
+				<div class="col-md-3">
+					<?php
+					$col = "MODEL";
+					$q = "SELECT DISTINCT $col FROM $tableName";
+					$r = mysql_query($q,$dbc);
+					if($r)
+					{
+						echo "<select name=\"$tableName\">\n";
+							
+
+echo "<option selected=/"selected/" value=/"/"> </option>\n";
+
+								while ($row = mysql_fetch_array($r))
 								{
-									echo "<select name=\"$tableName\">\n";
-									echo "<option value=''> </option>";
-										while ($row = mysql_fetch_array($r))
-										{
-											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-										}
-											echo "</select>";	
-										} 
-											?>
-								</div>
-								
-								<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> FUEL TYPE </p> </div>
-								<div class="col-md-3">
-									<?php
-									$col = "FUEL";
-									$q = "SELECT DISTINCT $col FROM $tableName";
-									$r = mysql_query($q,$dbc);
-									if($r)
-									{
-									echo "<select name=\"$tableName\">\n";
-									echo "<option value=''> </option>";
-										while ($row = mysql_fetch_array($r))
-										{
-										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-										}
-											echo "</select>";	
-										} 
-											?>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> MODEL </p> </div>
-									<div class="col-md-3">
-										<?php
-										$col = "MODEL";
-										$q = "SELECT DISTINCT $col FROM $tableName";
-										$r = mysql_query($q,$dbc);
-										if($r)
-										{
-											echo "<select name=\"$tableName\">\n";
-											echo "<option value=''> </option>";
-												while ($row = mysql_fetch_array($r))
-												{
-													echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-												}
-											echo "</select>";	
-										} 
-											?>
-										</div>
-									</div>
-									</br>
-									</br>
-									<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
-									</br>
-									</br>
-									</br>
-									</br>
-									
-									<footer>
-										<p>&copy; carribeanada 2014</p>
-									</footer>
-								</div>
+									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+								}
+							echo "</select>";
+					}
+					?>
+				</div>
+			</div>
+			</br>
+			</br>
+			<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
+			</br>
+			</br>
+			</br>
+			</br>
+			
+			<footer>
+				<p>&copy; carribeanada 2014</p>
+			</footer>
+		</div>

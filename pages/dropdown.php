@@ -10,21 +10,19 @@
 
 		DEFINE ('DB_USER', 'cs4477216');
 		DEFINE ('DB_PASSWORD', 'malQuic7');
-		DEFINE ('DB_HOST', 'cs.smu.ca');
+		DEFINE ('DB_HOST', 'localhost');
 		DEFINE ('DB_NAME', 'cs4477216');
 		$tableName = "FUEL CONSUMPTION DATA";
 
 		$dbc = @mysql_connect (DB_HOST, DB_USER, DB_PASSWORD) 
 		OR die ('Could not connect to MySQL: ' . mysql_connect_error());
 
-		if ($dbc == true) echo "Success!";
-		else echo "Failure!";
+		$db = @mysql_select_db(DB_NAME,$dbc);
 
-		$query = "SELECT CLASS FROM $tableName";
+		$query = "SELECT YR FROM FUELDATA";
 
 		$result = @mysql_query($query, $connection) or die("Couldn't execute query.");
 		echo $result;
-
 
 		?>
 

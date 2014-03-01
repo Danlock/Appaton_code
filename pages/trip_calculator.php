@@ -56,14 +56,12 @@
 						if($r)
 						{
 							echo "<select name=\"$tableName\">\n";
-								
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-									while ($row = mysql_fetch_array($r))
-									{
-										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-									}
+										
+							echo "<option selected value=\"\"> </option>\n";
+											while ($row = mysql_fetch_array($r))
+											{
+												echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+											}
 														echo "</select>\n";
 						}
 					?>
@@ -78,14 +76,12 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 						if($r)
 						{
 							echo "<select name=\"$tableName\">\n";
-								
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-									while ($row = mysql_fetch_array($r))
-									{
-									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-									}
+										
+							echo "<option selected value=\"\"> </option>\n";
+											while ($row = mysql_fetch_array($r))
+											{
+											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+											}
 														echo "</select>";
 												}
 					?>
@@ -107,14 +103,12 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 					if($r)
 					{
 						echo "<select name=\"$tableName\">\n";
-							
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-								while ($row = mysql_fetch_array($r))
-								{
-									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-								}
+									
+							echo "<option selected value=\"\"> </option>\n";
+										while ($row = mysql_fetch_array($r))
+										{
+											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+										}
 											echo "</select>";
 									}
 					?>
@@ -129,14 +123,12 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 					if($r)
 					{
 					echo "<select name=\"$tableName\">\n";
-						
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-							while ($row = mysql_fetch_array($r))
-							{
-							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-							}
+								
+							echo "<option selected value=\"\"> </option>\n";
+									while ($row = mysql_fetch_array($r))
+									{
+									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									}
 										echo "</select>";
 								}
 					?>
@@ -152,14 +144,12 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 					if($r)
 					{
 						echo "<select name=\"$tableName\">\n";
-							
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-								while ($row = mysql_fetch_array($r))
-								{
-									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-								}
+									
+							echo "<option selected value=\"\"> </option>\n";
+										while ($row = mysql_fetch_array($r))
+										{
+											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+										}
 									echo "</select>";
 							}
 					?>
@@ -174,14 +164,11 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 					if($r)
 					{
 					echo "<select name=\"$tableName\">\n";
-						
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-							while ($row = mysql_fetch_array($r))
-							{
-							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-							}
+							echo "<option selected value=\"\"> </option>\n";
+									while ($row = mysql_fetch_array($r))
+									{
+									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									}
 								echo "</select>";
 						}
 					?>
@@ -197,20 +184,34 @@ echo "<option selected=/"selected/" value=/"/"> </option>\n";
 					if($r)
 					{
 						echo "<select name=\"$tableName\">\n";
-							
-
-echo "<option selected=/"selected/" value=/"/"> </option>\n";
-
-								while ($row = mysql_fetch_array($r))
-								{
-									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
-								}
+									
+							echo "<option selected value=\"\"> </option>\n";
+										while ($row = mysql_fetch_array($r))
+										{
+											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+										}
 							echo "</select>";
 					}
 					?>
 				</div>
 			</div>
 			</br>
+			<?php
+				$col = "MODEL";
+				$q = "SELECT DISTINCT $col FROM $tableName";
+				$r = mysql_query($q,$dbc);
+				if($r)
+				{
+					echo "<select name=\"$tableName\">\n";
+								
+						echo "<option selected value=\"\"> </option>\n";
+									while ($row = mysql_fetch_array($r))
+									{
+										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+									}
+						echo "</select>";
+				}
+			?>
 			</br>
 			<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
 			</br>

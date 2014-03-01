@@ -4233,6 +4233,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li > a {
   border-radius: 4px;
   color: #FFF;
+  font-weight:bold;
 }
 
 .nav-pills > li + li {

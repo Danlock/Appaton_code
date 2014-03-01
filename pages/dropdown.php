@@ -12,34 +12,35 @@
 		DEFINE ('DB_PASSWORD', 'malQuic7');
 		DEFINE ('DB_HOST', 'localhost');
 		DEFINE ('DB_NAME', 'cs4477216');
-		$tableName = "FUEL CONSUMPTION DATA";
+		$tableName = "FUELDATA";
 
 		$dbc = @mysql_connect (DB_HOST, DB_USER, DB_PASSWORD) 
 		OR die ('Could not connect to MySQL: ' . mysql_connect_error());
 
 		$db = @mysql_select_db(DB_NAME,$dbc);
 
-		$query = "SELECT YR FROM FUELDATA";
+		// $query = "SELECT YR FROM FUELDATA";
 
-		$result = @mysql_query($query, $connection) or die("Couldn't execute query.");
-		echo $result;
+		// $result = @mysql_query($query, $dbc) or die("Couldn't execute query.");
+		// $row = mysql_fetch_array($result);
+		// echo $row[''];
+		mysql_set_charset('utf8',$dbc);
 
+		$q = "SELECT DISTINCT CLASS FROM $tableName";
+		$r = mysql_query($q,$dbc);
+
+		if($r)
+		{
+			echo "<select name=\"$tableName\">\n";
+			while ($row = mysql_fetch_array($r))
+			{
+				echo "<option value=\"{$row['CLASS']}\">{$row['CLASS']}</option>\n";
+			}
+		} else
+		echo "result is false";
 		?>
 
 	</head>
 	<body>
 	</body>
 </html>
-<!-- 		// mysql_set_charset($dbc, 'utf8');
-
-// $q = "SELECT * FROM categories";
-// $r = mysql_query($dbc,$q);
-
-// if($r)
-// {
-// 	//echo "<select name=\"category\">\n"
-// 	while ($row = mysql_fetch_array($r, MYSQLI_ASSOC))
-// 	{
-// 		echo "<option value=\"{$row['cat_id']}\">{$row['name']}</option>\n";
-// 	}
-// } -->

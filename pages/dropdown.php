@@ -31,7 +31,7 @@
 
 		if($r)
 		{
-			echo "<select name=\"$tableName\">\n";
+			echo "<select id=\"$col\">\n";
 			while ($row = mysql_fetch_array($r))
 			{
 				echo "<option value=\"{$row['CLASS']}\">{$row['CLASS']}</option>\n";

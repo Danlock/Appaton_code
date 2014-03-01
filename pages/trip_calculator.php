@@ -51,11 +51,11 @@
 				<div class="col-md-3">
 					<?php
 						$col = "CLASS";
-						$q = "SELECT DISTINCT $col FROM $tableName";
+						$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select name=\"$tableName\">\n";
+							echo "<select id=\"$col\">\n";
 										
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
@@ -71,11 +71,11 @@
 				<div class="col-md-3">
 					<?php
 						$col = "ENG";
-						$q = "SELECT DISTINCT $col FROM $tableName";
+						$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select name=\"$tableName\">\n";
+							echo "<select id=\"$col\">\n";
 										
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
@@ -83,7 +83,7 @@
 											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
 											}
 														echo "</select>";
-												}
+						}
 					?>
 					
 				</div>
@@ -98,11 +98,11 @@
 				<div class="col-md-3">
 					<?php
 					$col = "BRAND";
-					$q = "SELECT DISTINCT $col FROM $tableName";
+					$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select id=\"$col\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -118,11 +118,11 @@
 				<div class="col-md-3">
 					<?php
 					$col = "CYLINDERS";
-					$q = "SELECT DISTINCT $col FROM $tableName";
+					$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select name=\"$tableName\">\n";
+					echo "<select id=\"$col\">\n";
 								
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
@@ -139,11 +139,11 @@
 				<div class="col-md-3">
 					<?php
 					$col = "TRANS";
-					$q = "SELECT DISTINCT $col FROM $tableName";
+					$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select id=\"$col\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -159,11 +159,11 @@
 				<div class="col-md-3">
 					<?php
 					$col = "FUEL";
-					$q = "SELECT DISTINCT $col FROM $tableName";
+					$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select name=\"$tableName\">\n";
+					echo "<select id=\"$col\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
@@ -179,11 +179,11 @@
 				<div class="col-md-3">
 					<?php
 					$col = "MODEL";
-					$q = "SELECT DISTINCT $col FROM $tableName";
+					$q = "SELECT DISTINCT $col FROM $tableName ORDER BY $col";
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select id=\"$col\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -197,19 +197,36 @@
 			</div>
 			</br>
 			<?php
-				$col = "MODEL";
-				$q = "SELECT DISTINCT $col FROM $tableName";
+				$model = $_POST('MODEL');
+				$class = $_POST('CLASS');
+				$eng = $_POST('ENG');
+				$trans = $_POST('TRANS');
+				$cyl = $_POST('CYLINDERS');
+				$fuel = $_POST('FUEL');
+
+				echo "<br/>" . $model . "<br/>";
+				$q = "SELECT BRAND, MODEL, 'CITY (L)', 'HWY (L)', 'FUEL L/YR', CO2 FROM $tableName WHERE ";
+				if ($model && $class && $eng && $trans && $cyl && $fuel)
+					//TODO: change to reflect 
+					$q .= 1;
+				else $q .= 1;
+
 				$r = mysql_query($q,$dbc);
 				if($r)
 				{
-					echo "<select name=\"$tableName\">\n";
+					echo "<table name=\"results\">\n";
 								
-						echo "<option selected value=\"\"> </option>\n";
+						echo "<tr>";
 									while ($row = mysql_fetch_array($r))
 									{
-										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
+										echo "<td>{$row['BRAND']}</td>\n";
+										echo "<td>{$row['MODEL']}</td>\n";
+										echo "<td>{$row['CITY (L)']}</td>\n";
+										echo "<td>{$row['HWY (L)']}</td>\n";
+										echo "<td>{$row['FUEL L/YR']}</td>\n";
+										echo "<td>{$row['CO2']}</td>\n";
 									}
-						echo "</select>";
+						echo "</tr>\n</table>";
 				}
 			?>
 			</br>

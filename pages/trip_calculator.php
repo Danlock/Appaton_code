@@ -46,6 +46,10 @@
 			</br>
 			
 			</br>
+			
+			<form class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
+  <div class="form-group">
+			
 			<div class="row">
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Vehicle CLASS </p> </div>
 				<div class="col-md-3">
@@ -55,7 +59,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select name=\"$tableName\">\n";
+							echo "<select class=\"form-control\" name=\"$tableName\">\n";
 										
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
@@ -75,7 +79,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select name=\"$tableName\">\n";
+							echo "<select class=\"form-control\" name=\"$tableName\">\n";
 										
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
@@ -102,7 +106,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -113,7 +117,7 @@
 									}
 					?>
 				</div>
-				
+				</br>
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> CYLINDERS </p> </div>
 				<div class="col-md-3">
 					<?php
@@ -122,9 +126,9 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select name=\"$tableName\">\n";
+					echo "<select class=\"form-control\" name=\"$tableName\">\n";
 								
-							echo "<option selected value=\"\"> </option>\n";
+							echo "<option class=\"form-control\" selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
 									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -143,7 +147,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -154,6 +158,7 @@
 							}
 					?>
 				</div>
+				</br>
 				
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> FUEL TYPE </p> </div>
 				<div class="col-md-3">
@@ -163,7 +168,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select name=\"$tableName\">\n";
+					echo "<select class=\"form-control\" name=\"$tableName\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
@@ -183,7 +188,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select name=\"$tableName\">\n";
+						echo "<select class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -202,7 +207,7 @@
 				$r = mysql_query($q,$dbc);
 				if($r)
 				{
-					echo "<select name=\"$tableName\">\n";
+					echo "<select class=\"form-control\" name=\"$tableName\">\n";
 								
 						echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
@@ -212,8 +217,13 @@
 						echo "</select>";
 				}
 			?>
-			</br>
+			
+			
+			</div>
+			</form>
+			
 			<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
+			
 			</br>
 			</br>
 			</br>

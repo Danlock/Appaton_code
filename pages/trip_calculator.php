@@ -56,6 +56,7 @@
 				if($r)
 				{
 					echo "<select name=\"$tableName\">\n";
+					echo "<option value=''> </option>";
 						while ($row = mysql_fetch_array($r))
 						{
 							echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -74,6 +75,7 @@
 				if($r)
 				{
 					echo "<select name=\"$tableName\">\n";
+					echo "<option value=''> </option>";
 						while ($row = mysql_fetch_array($r))
 						{
 						echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -99,6 +101,7 @@
 						if($r)
 						{
 							echo "<select name=\"$tableName\">\n";
+							echo "<option value=''> </option>";
 								while ($row = mysql_fetch_array($r))
 								{
 									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -117,6 +120,7 @@
 							if($r)
 							{
 							echo "<select name=\"$tableName\">\n";
+							echo "<option value=''> </option>";
 								while ($row = mysql_fetch_array($r))
 								{
 								echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -136,6 +140,7 @@
 								if($r)
 								{
 									echo "<select name=\"$tableName\">\n";
+									echo "<option value=''> </option>";
 										while ($row = mysql_fetch_array($r))
 										{
 											echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -154,6 +159,7 @@
 									if($r)
 									{
 									echo "<select name=\"$tableName\">\n";
+									echo "<option value=''> </option>";
 										while ($row = mysql_fetch_array($r))
 										{
 										echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -173,6 +179,7 @@
 										if($r)
 										{
 											echo "<select name=\"$tableName\">\n";
+											echo "<option value=''> </option>";
 												while ($row = mysql_fetch_array($r))
 												{
 													echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";

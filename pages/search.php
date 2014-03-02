@@ -9,7 +9,7 @@
 				$fuel = $_POST["FUEL"];
 
 				$q = "SELECT BRAND, MODEL, CITY(L), HWY(L), FUEL(L/YR), CO2 FROM $tableName WHERE ";
-				if ($model) {
+				/*if ($model) {
 					$q .= "MODEL=$model ";
 				} 
 				if ($class) {
@@ -17,7 +17,8 @@
 				} && $eng && $trans && $cyl && $fuel)
 					//TODO: change to reflect 
 					$q .= 1;
-				else $q .= 1;
+				else */
+					$q .= 1;
 
 				$r = mysql_query($q,$dbc);
 				if($r)
@@ -32,8 +33,7 @@
 										echo "<td>{HWY (L/100Km)}</td>\n";
 										echo "<td>{FUEL L/YEAR}</td>\n";
 										echo "<td>{CO2}</td>\n";
-										echo "</tr>\n";
-								
+										echo "</tr>\n";		
 						echo "<tr>";
 									while ($row = mysql_fetch_array($r))
 									{

@@ -199,12 +199,11 @@
 			</div>
 			</br>
 			</br>
-			<form method="post" action="trip_calculator.php">
-			<input type="submit" name="Search" value="Search" >Search</input>
+			<form method="post" action="search.php">
+			<button type="submit" name="Search" value="Search" class="btn btn-default">Search</button>
 			</form>
 			</br>
 			</br>
-			<?php require("./search.php")?>
 			</div>
 			
 			</br>

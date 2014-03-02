@@ -24,7 +24,7 @@
 		
 		<script>
 		
-		$('select[name="CLASS"]').change(function(){
+		$("CLASS").change(function(){
   
     if ($(this).val() == "COMPACT")
 	{

@@ -385,12 +385,36 @@ function OnChange(dropdown)
 				}
 
 				//echo "SUCCESS!!!";
+				echo "<h3> Your Search Criteria </h3>";
 				$r = mysql_query($q,$dbc) or die("mysql_query FAILED" . mysql_error());
 				if($r)
 				{
 					//echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
 					//echo "<select class=\"form-control\" name=\"$tableName\">\n";
-					echo "Searching for a $brand $model $class ENGINE=$eng TRANSMISSION=$trans CYLINDERS=$cyl FUEL=$fuel<br/><br/>";
+					echo
+					"<table class = \" table table-bordered\" style=\"width:300px\">
+					<tr>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Class</th>
+					<th>Engine</th>
+					<th>Transmission</th>
+					<th>Cylinder</th>
+					<th>Fuel</th>
+					</tr>
+					<tr>
+					<tr>
+					<td>$brand</td>
+					<td>$model</td>
+					<td>$class</td>
+					<td>$eng</td>
+					<td>$trans</td>
+					<td>$cyl</td>
+					<td>$fuel</td>
+					</tr>
+					</tr>
+					</table>";
+					
 					echo "<table class=\"table table-striped\" name=\"results\">\n";
 					echo "<tr>\n";
 					echo "<td>BRAND</td>\n";

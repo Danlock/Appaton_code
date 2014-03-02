@@ -215,7 +215,7 @@ function OnChange(dropdown)
 			</br>
 			</br>
 
-			<button type="submit" name="Search" value="Search" class="btn btn-info col-md-12">Search</button>
+			<button type="submit" name="Search" value="Search" class="btn btn-info col-md-12" style="font-weight:bold;">Search</button>
 
 			</br>
 			</br>

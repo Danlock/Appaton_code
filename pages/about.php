@@ -24,7 +24,7 @@
 <div class="row">
 				<div class="col-md-12">
 <fieldset class="scheduler-border" style="marging-left:15px">
-    <legend class="scheduler-border"">About us</legend>
+    <legend class="scheduler-border">About us</legend>
 			
 					Team Carribeanada is composed of both 4th year, and 
 					former students of Saint Mary's University, of Dr. Pawan Lingras.
@@ -52,8 +52,8 @@
 				</div>
 	    
 	<footer>
-        <p>&copy; Carribeanada 2014</p>
-		<br>
+        <p>&copy; carribeanada 2014</p>
+		</br>
       </footer>
 </div>
 

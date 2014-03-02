@@ -23,7 +23,7 @@
 				  
 	    
 	<footer>
-        <p>&copy; Jake Delmas 2013</p>
+        <p>&copy; carribeanada 2014</p>
       </footer>
 </div>
 

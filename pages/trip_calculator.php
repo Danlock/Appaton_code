@@ -59,12 +59,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-<<<<<<< HEAD
-							echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-							echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
-										
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -83,12 +78,8 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-<<<<<<< HEAD
-							echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-							echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
-										
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -101,8 +92,6 @@
 				</div>
 			</div>
 			
-			
-			
 			</br>
 			
 			<div class="row">
@@ -114,11 +103,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-<<<<<<< HEAD
-						echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-						echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -138,11 +123,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-<<<<<<< HEAD
-					echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-					echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 								
 							echo "<option class=\"form-control\" selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
@@ -163,11 +144,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-<<<<<<< HEAD
-						echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-						echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -188,11 +165,8 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-<<<<<<< HEAD
-					echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-					echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
@@ -212,12 +186,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-<<<<<<< HEAD
-						echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-						echo "<select id=\"$col\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
-									
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
 										{
@@ -229,49 +198,14 @@
 				</div>
 			</div>
 			</br>
-			<?php
-				$model = $_POST('MODEL');
-				$class = $_POST('CLASS');
-				$eng = $_POST('ENG');
-				$trans = $_POST('TRANS');
-				$cyl = $_POST('CYLINDERS');
-				$fuel = $_POST('FUEL');
-
-				echo "<br/>" . $model . "<br/>";
-				$q = "SELECT BRAND, MODEL, 'CITY (L)', 'HWY (L)', 'FUEL L/YR', CO2 FROM $tableName WHERE ";
-				if ($model && $class && $eng && $trans && $cyl && $fuel)
-					//TODO: change to reflect 
-					$q .= 1;
-				else $q .= 1;
-
-				$r = mysql_query($q,$dbc);
-				if($r)
-				{
-<<<<<<< HEAD
-					echo "<select class=\"form-control\" name=\"$tableName\">\n";
-=======
-					echo "<table name=\"results\">\n";
->>>>>>> f1c34d4072ed4e39377d77563ae0456b206f1a53
-								
-						echo "<tr>";
-									while ($row = mysql_fetch_array($r))
-									{
-										echo "<td>{$row['BRAND']}</td>\n";
-										echo "<td>{$row['MODEL']}</td>\n";
-										echo "<td>{$row['CITY (L)']}</td>\n";
-										echo "<td>{$row['HWY (L)']}</td>\n";
-										echo "<td>{$row['FUEL L/YR']}</td>\n";
-										echo "<td>{$row['CO2']}</td>\n";
-									}
-						echo "</tr>\n</table>";
-				}
-			?>
-			
-			
-			</div>
+			</br>
+			<form method="post" action="trip_calculator.php">
+			<input type="submit" name="Search" value="Search" >Search</input>
 			</form>
-			
-			<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
+			</br>
+			</br>
+			<?php require("./search.php")?>
+			</div>
 			
 			</br>
 			</br>

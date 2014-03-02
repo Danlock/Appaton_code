@@ -196,15 +196,21 @@
 				</div>
 			</div>
 			</br>
+			</br>
+			<form method="post" action="trip_calculator.php">
+			<button type="submit" name="Search" value="Search" class="btn btn-primary col-md-12 text-center" >Search</button>
+			</form>
+			</br>
+			</br>
 			<?php
-				$model = $_POST('MODEL');
-				$class = $_POST('CLASS');
-				$eng = $_POST('ENG');
-				$trans = $_POST('TRANS');
-				$cyl = $_POST('CYLINDERS');
-				$fuel = $_POST('FUEL');
+			if (isset($_POST['Search'])) {
+				$model = $_POST["MODEL"];
+				$class = $_POST["CLASS"];
+				$eng = $_POST["ENG"];
+				$trans = $_POST["TRANS"];
+				$cyl = $_POST["CYLINDERS"];
+				$fuel = $_POST["FUEL"];
 
-				echo "<br/>" . $model . "<br/>";
 				$q = "SELECT BRAND, MODEL, 'CITY (L)', 'HWY (L)', 'FUEL L/YR', CO2 FROM $tableName WHERE ";
 				if ($model && $class && $eng && $trans && $cyl && $fuel)
 					//TODO: change to reflect 
@@ -215,24 +221,29 @@
 				if($r)
 				{
 					echo "<table name=\"results\">\n";
-								
-						echo "<tr>";
+										echo "<tr>\n";
+										echo "<td>{BRAND}</td>\n";
+										echo "<td>{MODEL}</td>\n";
+										echo "<td>{CITY (L)}</td>\n";
+										echo "<td>{HWY (L)}</td>\n";
+										echo "<td>{FUEL L/YR}</td>\n";
+										echo "<td>{CO2}</td>\n";
+										echo "</tr>\n";
 									while ($row = mysql_fetch_array($r))
 									{
+										echo "<tr>\n";
 										echo "<td>{$row['BRAND']}</td>\n";
 										echo "<td>{$row['MODEL']}</td>\n";
-										echo "<td>{$row['CITY (L)']}</td>\n";
-										echo "<td>{$row['HWY (L)']}</td>\n";
-										echo "<td>{$row['FUEL L/YR']}</td>\n";
+										echo "<td>{$row['`CITY (L)`']}</td>\n";
+										echo "<td>{$row['`HWY (L)`']}</td>\n";
+										echo "<td>{$row['`FUEL L/YR`']}</td>\n";
 										echo "<td>{$row['CO2']}</td>\n";
+										echo "</tr>\n";
 									}
-						echo "</tr>\n</table>";
+						echo "</table>\n";
 				}
+			}
 			?>
-			</br>
-			<button type="button" class="btn btn-primary col-md-12 text-center">Search</button>
-			</br>
-			</br>
 			</br>
 			</br>
 			

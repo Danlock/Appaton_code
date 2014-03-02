@@ -14,15 +14,18 @@
 	         
 	              <ul class="nav nav-pills nav-justified">
 	                <li><a href="../index.html">Home</a></li>
-	                <li ><a href="../pages/gas_prices.php">Gas Prices</a></li>            
-	                <li><a href="../pages/trip_calculator.php">Trip Cost Calculator</a></li>
-	                <li><a href="../pages/about.php">About</a></li>
-	                <li><a href="../pages/contact.php">Contact</a></li>
+	                <li ><a href="gas_prices.php">FAQ & Stats</a></li>            
+	                <li><a href="trip_calculator.php">Trip Cost Calculator</a></li>
+	                <li><a href="about.php">About</a></li>
+	                <li><a href="contact.php">Contact</a></li>
 	              </ul>
 			<br>
-			<form>
-				<fieldset>
-					<legend>About Us</legend>	
+			
+<div class="row">
+				<div class="col-md-12">
+<fieldset class="scheduler-border" style="marging-left:15px">
+    <legend class="scheduler-border"">About us</legend>
+			
 					Team Carribeanada is composed of both 4th year, and 
 					former students of Saint Mary's University, of Dr. Pawan Lingras.
 					Together, we would wish for users to be able to obtain information
@@ -43,8 +46,10 @@
 					</li>
 					</ol>
 					<br>
+				</legend>
 				</fieldset>
-			</form>
+				</div>
+				</div>
 	    
 	<footer>
         <p>&copy; Carribeanada 2014</p>

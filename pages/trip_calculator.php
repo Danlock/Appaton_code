@@ -43,10 +43,10 @@ function OnChange(dropdown)
 			
 			<ul class="nav nav-pills nav-justified">
 	            <li><a href="../index.html">Home</a></li>
-	            <li ><a href="../pages/gas_prices.php">Gas Prices</a></li>            
-	            <li><a href="../pages/trip_calculator.php">Trip Cost Calculator</a></li>
-	            <li><a href="../pages/about.php">About</a></li>
-	            <li><a href="../pages/contact.php">Contact</a></li>
+	            <li ><a href="gas_prices.php">FAQ & Stats</a></li>            
+	            <li><a href="trip_calculator.php">Trip Cost Calculator</a></li>
+	            <li><a href="about.php">About</a></li>
+	            <li><a href="contact.php">Contact</a></li>
 	        </ul>
 			
 			</br>

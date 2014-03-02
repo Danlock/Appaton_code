@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="../js/bootstrap.js"></script>
+		
 		<?php
 		DEFINE ('DB_USER', 'cs4477216');
 		DEFINE ('DB_PASSWORD', 'malQuic7');
@@ -22,98 +23,18 @@
 		mysql_set_charset('utf8',$dbc);
 		?>
 		
-		<script>
-		
-		$("CLASS").change(function(){
-  
-    if ($(this).val() == "COMPACT")
-	{
-        alert("call the do something function on option 2");
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MID-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MINICOMPACT")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUBCOMPACT")
-		{
-		
-		}
-		
-		elseif($(this).val() == "TWO-SEATER")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "FULL-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "STATION WAGON - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - STANDARD")
-		{
-		
-		}
-		
-		elseif($(this).val() == "VAN - CARGO")
-		{
-		
-		}
-		
-		elseif($(this).val() == "VAN - PASSENGER")
-		{
-		
-		}
-		
-		elseif($(this).val() == "PICKUP TRUCK - STANDARD")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MINIVAN")
-		{
-		
-		}
-		
-		elseif($(this).val() == "STATION WAGON - MID-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "PICKUP TRUCK - SMALL")
-		{
-		
-		}
+		<SCRIPT LANGUAGE="javascript">
+<!--
+function OnChange(dropdown)
+{
+    console.log("in the image ufnction");
+	var myindex  = dropdown.selectedIndex
+	document.getElementById('classpic').src="../images/"+dropdown.options[myindex].value+".png";
     
-});
-		
-		</script>
+    return true;
+}
+//-->
+</SCRIPT>
 		
 	</head>
 	<body style="background-image:url('../images/retro.jpg')">
@@ -133,7 +54,7 @@
 			
 			<div class="row">
 				<div class="col-md-2 text-center"> Left Arrow </div>
-				<div class="col-md-8 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded"> </div>
+				<div class="col-md-8 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded" id="classpic"> </div>
 				<div class="col-md-2 text-center"> Right arrow </div>
 			</div>
 			
@@ -153,7 +74,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
+							echo "<select id=\"$col\" class=\"form-control\" onchange=\"OnChange(this.form.CLASS)\" name=\"$col\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{

@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="../js/bootstrap.js"></script>
+		
 		<?php
 		DEFINE ('DB_USER', 'cs4477216');
 		DEFINE ('DB_PASSWORD', 'malQuic7');
@@ -23,119 +24,39 @@
 		$GLOBALS['dbc'] = $dbc;
 		?>
 		
-		<script>
-		
-		$("CLASS").change(function(){
-  
-    if ($(this).val() == "COMPACT")
-	{
-        alert("call the do something function on option 2");
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MID-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MINICOMPACT")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUBCOMPACT")
-		{
-		
-		}
-		
-		elseif($(this).val() == "TWO-SEATER")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "FULL-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "STATION WAGON - SMALL")
-		{
-		
-		}
-		
-		elseif($(this).val() == "SUV - STANDARD")
-		{
-		
-		}
-		
-		elseif($(this).val() == "VAN - CARGO")
-		{
-		
-		}
-		
-		elseif($(this).val() == "VAN - PASSENGER")
-		{
-		
-		}
-		
-		elseif($(this).val() == "PICKUP TRUCK - STANDARD")
-		{
-		
-		}
-		
-		elseif($(this).val() == "MINIVAN")
-		{
-		
-		}
-		
-		elseif($(this).val() == "STATION WAGON - MID-SIZE")
-		{
-		
-		}
-		
-		elseif($(this).val() == "PICKUP TRUCK - SMALL")
-		{
-		
-		}
+		<SCRIPT LANGUAGE="javascript">
+<!--
+function OnChange(dropdown)
+{
     
-});
-		
-		</script>
+	var myindex  = dropdown.selectedIndex
+	document.getElementById('classpic').src="../images/"+dropdown.options[myindex].value+".png";
+    
+    return true;
+}
+//-->
+</SCRIPT>
 		
 	</head>
 	<body style="background-image:url('../images/retro.jpg')">
 		
-		<div class="container" style="background-color:white">
+		<div class="container" style="background-color:white;padding:25px">
 			
-			<ul class="nav nav-pills nav-justified">
+			<ul class="nav nav-pills nav-justified navbar-fixed-top">
 	            <li><a href="../index.html">Home</a></li>
-	            <li ><a href="../pages/gas_prices.php">Gas Prices</a></li>            
-	            <li><a href="../pages/trip_calculator.php">Trip Cost Calculator</a></li>
-	            <li><a href="../pages/about.php">About</a></li>
-	            <li><a href="../pages/contact.php">Contact</a></li>
+	            <li ><a href="gas_prices.php">FAQ & Stats</a></li>            
+	            <li><a href="trip_calculator.php">Trip Cost Calculator</a></li>
+	            <li><a href="about.php">About</a></li>
+	            <li><a href="contact.php">Contact</a></li>
 	        </ul>
 			
 			</br>
 			</br>
 			
 			<div class="row">
-				<div class="col-md-2 text-center"> Left Arrow </div>
-				<div class="col-md-8 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded"> </div>
-				<div class="col-md-2 text-center"> Right arrow </div>
+				<div class="col-md-2" style="text-align:center;border-style:ridge;border-width:1px;margin-left: 20px;"> <h3> Instructions:</h3> </br> <p> Please select a vehicle class and fill in as much information from the drop down menus as needed/known.</br> When finished, click the search button and a table of results will be shown.  </p> </div>
+				<div class="col-md-9 text-center"> <img src="../images/Select_A_Car.png" alt="..." class="img-rounded" id="classpic" width="500" height="250"> </div>
+			
 			</div>
 			
 			</br>
@@ -154,7 +75,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
+							echo "<select id=\"$col\" class=\"form-control\" onchange=\"OnChange(this.form.CLASS)\" name=\"$col\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -295,11 +216,12 @@
 			</br>
 			</br>
 
-			<button type="submit" name="Search" value="Search" class="btn btn-default">Search</button>
+			<button type="submit" name="Search" value="Search" class="btn btn-info col-md-12" style="font-weight:bold;">Search</button>
 
 			</br>
 			</br>
 			</div>
+			</form>
 			<?php
 			if (isset($_POST['Search'])) {
 				DEFINE ('DB_USER', 'cs4477216');

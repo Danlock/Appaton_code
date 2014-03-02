@@ -20,6 +20,7 @@
 		// $row = mysql_fetch_array($result);
 		// echo $row[''];
 		mysql_set_charset('utf8',$dbc);
+		$GLOBALS['dbc'] = $dbc;
 		?>
 		
 		<script>
@@ -301,16 +302,24 @@
 			</div>
 			<?php
 			if (isset($_POST['Search'])) {
-				
+				DEFINE ('DB_USER', 'cs4477216');
+				DEFINE ('DB_PASSWORD', 'malQuic7');
+				DEFINE ('DB_HOST', 'localhost');
+				DEFINE ('DB_NAME', 'cs4477216');
+				$tableName = "FUELDATA";
+				$dbc = @mysql_connect(DB_HOST, DB_USER, DB_PASSWORD)
+				OR die ('Could not connect to MySQL: ' . mysql_connect_error());
+				$db = @mysql_select_db(DB_NAME,$dbc);
+				mysql_set_charset('utf8',$dbc);
+
 				$model = $_POST["MODEL"];
 				$class = $_POST["CLASS"];
 				$eng = $_POST["ENG"];
 				$trans = $_POST["TRANS"];
 				$cyl = $_POST["CYLINDERS"];
 				$fuel = $_POST["FUEL"];
-				global $dbc;
-				//$q = "SELECT BRAND, MODEL, CITY(L), HWY(L), FUEL(L/YR), CO2 FROM $tableName WHERE ";
-				$q = "SELECT * FROM $tableName WHERE ";
+				$q = "SELECT BRAND, MODEL, CITY(L), HWY(L), FUEL(L/YR), CO2 FROM FUELDATA";
+				//$q = "SELECT * FROM $tableName WHERE ";
 				/*if ($model) {
 					$q .= "MODEL=$model ";
 				} 
@@ -322,33 +331,33 @@
 				else */
 					//$q .= 1;
 
-				$r = @mysql_query($q,$dbc);
+				$r = mysql_query($q,$dbc) or die("mysql_query FAILED");
 				if($r)
 				{
 					echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
 					echo "<select class=\"form-control\" name=\"$tableName\">\n";
 
 					echo "<table class=\"table table-striped\" name=\"results\">\n";
-										echo "<tr>\n";
-										echo "<td>{BRAND}</td>\n";
-										echo "<td>{MODEL}</td>\n";
-										echo "<td>{CITY (L/100Km)}</td>\n";
-										echo "<td>{HWY (L/100Km)}</td>\n";
-										echo "<td>{FUEL L/YEAR}</td>\n";
-										echo "<td>{CO2}</td>\n";
-										echo "</tr>\n";		
+					echo "<tr>\n";
+					echo "<td>{BRAND}</td>\n";
+					echo "<td>{MODEL}</td>\n";
+					echo "<td>{CITY (L/100Km)}</td>\n";
+					echo "<td>{HWY (L/100Km)}</td>\n";
+					echo "<td>{FUEL L/YEAR}</td>\n";
+					echo "<td>{CO2}</td>\n";
+					echo "</tr>\n";		
 						echo "<tr>";
-									while ($row = mysql_fetch_array($r))
-									{
-										echo "<tr>\n";
-										echo "<td>{$row['BRAND']}</td>\n";
-										echo "<td>{$row['MODEL']}</td>\n";
-										echo "<td>{$row['CITY(L)']}</td>\n";
-										echo "<td>{$row['HWY(L)']}</td>\n";
-										echo "<td>{$row['FUEL(L/YR)']}</td>\n";
-										echo "<td>{$row['CO2']}</td>\n";
-										echo "</tr>\n";
-									}
+						while ($row = mysql_fetch_array($r))
+						{
+							echo "<tr>\n";
+							echo "<td>{$row['BRAND']}</td>\n";
+							echo "<td>{$row['MODEL']}</td>\n";
+							echo "<td>{$row['CITY(L)']}</td>\n";
+							echo "<td>{$row['HWY(L)']}</td>\n";
+							echo "<td>{$row['FUEL(L/YR)']}</td>\n";
+							echo "<td>{$row['CO2']}</td>\n";
+							echo "</tr>\n";
+						}
 						echo "</table>\n";
 				}
 			}

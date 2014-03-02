@@ -13,7 +13,7 @@
 		  <div class="container" style="background-color:white">
 	         
 	              <ul class="nav nav-pills nav-justified">
-	                <li><a href="#">Home</a></li>
+	                <li><a href="../index.html">Home</a></li>
 	                <li ><a href="#">Gas Prices</a></li>            
 	                <li><a href="#">Trip Cost Calculator</a></li>
 	                <li><a href="#">About</a></li>

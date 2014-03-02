@@ -26,13 +26,13 @@
 					Team Carribeanada is composed of both 4th year, and 
 					former students of Saint Mary's University, of Dr. Pawan Lingras.
 					Together, we would wish for users to be able to obtain information
-					about their car of choice. Information such as:
+					about their car of choice. Information such as: <br>
 					
-					Litres per 100/km city driving, as in comparison to highway driving
+					Litres per 100/km city driving, as in comparison to highway driving <br>
 					
-					Miles per gallon city driving, as in comparison to highway driving
+					Miles per gallon city driving, as in comparison to highway driving <br>
 					
-					Fuel burnt in litres per year
+					Fuel burnt in litres per year <br>
 					
 					Estimated tailpipe carbon dioxide emissions (in grams per kilometre),
 					based on fuel type and the combined fuel consumption rating.

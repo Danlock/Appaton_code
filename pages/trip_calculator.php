@@ -21,6 +21,100 @@
 		// echo $row[''];
 		mysql_set_charset('utf8',$dbc);
 		?>
+		
+		<script>
+		
+		$('select[name="CLASS"]').change(function(){
+  
+    if ($(this).val() == "COMPACT")
+	{
+        alert("call the do something function on option 2");
+		}
+		
+		elseif($(this).val() == "SUV - SMALL")
+		{
+		
+		}
+		
+		elseif($(this).val() == "MID-SIZE")
+		{
+		
+		}
+		
+		elseif($(this).val() == "MINICOMPACT")
+		{
+		
+		}
+		
+		elseif($(this).val() == "SUV - SMALL")
+		{
+		
+		}
+		
+		elseif($(this).val() == "SUBCOMPACT")
+		{
+		
+		}
+		
+		elseif($(this).val() == "TWO-SEATER")
+		{
+		
+		}
+		
+		elseif($(this).val() == "SUV - SMALL")
+		{
+		
+		}
+		
+		elseif($(this).val() == "FULL-SIZE")
+		{
+		
+		}
+		
+		elseif($(this).val() == "STATION WAGON - SMALL")
+		{
+		
+		}
+		
+		elseif($(this).val() == "SUV - STANDARD")
+		{
+		
+		}
+		
+		elseif($(this).val() == "VAN - CARGO")
+		{
+		
+		}
+		
+		elseif($(this).val() == "VAN - PASSENGER")
+		{
+		
+		}
+		
+		elseif($(this).val() == "PICKUP TRUCK - STANDARD")
+		{
+		
+		}
+		
+		elseif($(this).val() == "MINIVAN")
+		{
+		
+		}
+		
+		elseif($(this).val() == "STATION WAGON - MID-SIZE")
+		{
+		
+		}
+		
+		elseif($(this).val() == "PICKUP TRUCK - SMALL")
+		{
+		
+		}
+    
+});
+		
+		</script>
+		
 	</head>
 	<body style="background-image:url('../images/retro.jpg')">
 		

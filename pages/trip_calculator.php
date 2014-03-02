@@ -46,6 +46,10 @@
 			</br>
 			
 			</br>
+			
+			<form class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
+  <div class="form-group">
+			
 			<div class="row">
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Vehicle CLASS </p> </div>
 				<div class="col-md-3">
@@ -55,8 +59,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\">\n";
-										
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -75,8 +78,8 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\">\n";
-										
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -89,8 +92,6 @@
 				</div>
 			</div>
 			
-			
-			
 			</br>
 			
 			<div class="row">
@@ -102,7 +103,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\">\n";
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -113,7 +114,7 @@
 									}
 					?>
 				</div>
-				
+				</br>
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> CYLINDERS </p> </div>
 				<div class="col-md-3">
 					<?php
@@ -122,9 +123,9 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select id=\"$col\">\n";
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 								
-							echo "<option selected value=\"\"> </option>\n";
+							echo "<option class=\"form-control\" selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
 									echo "<option value=\"{$row[$col]}\">{$row[$col]}</option>\n";
@@ -143,7 +144,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\">\n";
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -154,6 +155,7 @@
 							}
 					?>
 				</div>
+				</br>
 				
 				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> FUEL TYPE </p> </div>
 				<div class="col-md-3">
@@ -163,7 +165,8 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select id=\"$col\">\n";
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
 									{
@@ -183,8 +186,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\">\n";
-									
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
 										{
@@ -198,52 +200,15 @@
 			</br>
 			</br>
 			<form method="post" action="trip_calculator.php">
-			<button type="submit" name="Search" value="Search" class="btn btn-primary col-md-12 text-center" >Search</button>
+			<input type="submit" name="Search" value="Search" >Search</input>
 			</form>
 			</br>
 			</br>
-			<?php
-			if (isset($_POST['Search'])) {
-				$model = $_POST["MODEL"];
-				$class = $_POST["CLASS"];
-				$eng = $_POST["ENG"];
-				$trans = $_POST["TRANS"];
-				$cyl = $_POST["CYLINDERS"];
-				$fuel = $_POST["FUEL"];
-
-				$q = "SELECT BRAND, MODEL, 'CITY (L)', 'HWY (L)', 'FUEL L/YR', CO2 FROM $tableName WHERE ";
-				if ($model && $class && $eng && $trans && $cyl && $fuel)
-					//TODO: change to reflect 
-					$q .= 1;
-				else $q .= 1;
-
-				$r = mysql_query($q,$dbc);
-				if($r)
-				{
-					echo "<table name=\"results\">\n";
-										echo "<tr>\n";
-										echo "<td>{BRAND}</td>\n";
-										echo "<td>{MODEL}</td>\n";
-										echo "<td>{CITY (L)}</td>\n";
-										echo "<td>{HWY (L)}</td>\n";
-										echo "<td>{FUEL L/YR}</td>\n";
-										echo "<td>{CO2}</td>\n";
-										echo "</tr>\n";
-									while ($row = mysql_fetch_array($r))
-									{
-										echo "<tr>\n";
-										echo "<td>{$row['BRAND']}</td>\n";
-										echo "<td>{$row['MODEL']}</td>\n";
-										echo "<td>{$row['`CITY (L)`']}</td>\n";
-										echo "<td>{$row['`HWY (L)`']}</td>\n";
-										echo "<td>{$row['`FUEL L/YR`']}</td>\n";
-										echo "<td>{$row['CO2']}</td>\n";
-										echo "</tr>\n";
-									}
-						echo "</table>\n";
-				}
-			}
-			?>
+			<?php require("./search.php")?>
+			</div>
+			
+			</br>
+			</br>
 			</br>
 			</br>
 			

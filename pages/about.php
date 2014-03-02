@@ -26,10 +26,12 @@
 <fieldset class="scheduler-border" style="marging-left:15px">
     <legend class="scheduler-border">About us</legend>
 			
-					Team Carribeanada is composed of both 4th year, and 
+<p style="text-align:justify">	Team Carribeanada is composed of both 4th year, and 
 					former students of Saint Mary's University, of Dr. Pawan Lingras.
-					Together, we would wish for users to be able to obtain information
-					about their car of choice. Information such as: <br>
+					It is interesting to see what can be obtained with curious data
+					that nobody is attempting to work on. So by that token,
+					together, we would wish for users to be able to obtain information
+					about their car of choice. Information such as: 
 					<ol>
 					<li>
 					Litres per 100/km city driving, as in comparison to highway driving <br>

@@ -47,7 +47,7 @@
 			
 			</br>
 			
-			<form class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
+			<form method="post" action="search.php" class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
   <div class="form-group">
 			
 			<div class="row">
@@ -199,9 +199,9 @@
 			</div>
 			</br>
 			</br>
-			<form method="post" action="search.php">
+
 			<button type="submit" name="Search" value="Search" class="btn btn-default">Search</button>
-			</form>
+
 			</br>
 			</br>
 			</div>

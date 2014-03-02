@@ -243,7 +243,7 @@ function OnChange(dropdown)
 					$q .= 1;
 				else */
 					//$q .= 1;
-
+				echo "SUCCESS!!!";
 				$r = @mysql_query($q,$dbc);
 				if($r)
 				{

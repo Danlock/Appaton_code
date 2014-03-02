@@ -27,7 +27,7 @@
 <!--
 function OnChange(dropdown)
 {
-    console.log("in the image ufnction");
+    
 	var myindex  = dropdown.selectedIndex
 	document.getElementById('classpic').src="../images/"+dropdown.options[myindex].value+".png";
     
@@ -53,9 +53,9 @@ function OnChange(dropdown)
 			</br>
 			
 			<div class="row">
-				<div class="col-md-2 text-center"> Left Arrow </div>
-				<div class="col-md-8 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded" id="classpic"> </div>
-				<div class="col-md-2 text-center"> Right arrow </div>
+				<div class="col-md-2" style="text-align:justify;border-style:ridge;border-width:1px;margin-left: 20px;"> <h3> Instructions:</h3> </br> <p> Please select a vehicle class and fill in as much information from the drop down menus as needed/known.</br> When finished, click the search button and a table of results will be shown.  </p> </div>
+				<div class="col-md-7 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded" id="classpic" width="400" height="200"> </div>
+			
 			</div>
 			
 			</br>

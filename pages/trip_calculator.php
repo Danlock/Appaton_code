@@ -54,7 +54,7 @@ function OnChange(dropdown)
 			
 			<div class="row">
 				<div class="col-md-2" style="text-align:justify;border-style:ridge;border-width:1px;margin-left: 20px;"> <h3> Instructions:</h3> </br> <p> Please select a vehicle class and fill in as much information from the drop down menus as needed/known.</br> When finished, click the search button and a table of results will be shown.  </p> </div>
-				<div class="col-md-7 text-center"> <img src="../images/truck.png" alt="..." class="img-rounded" id="classpic" width="400" height="200"> </div>
+				<div class="col-md-9 text-center"> <img src="../images/Select_A_Car.png" alt="..." class="img-rounded" id="classpic" width="500" height="250"> </div>
 			
 			</div>
 			

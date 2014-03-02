@@ -301,16 +301,16 @@
 			</div>
 			<?php
 			if (isset($_POST['Search'])) {
-				echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
+				
 				$model = $_POST["MODEL"];
 				$class = $_POST["CLASS"];
 				$eng = $_POST["ENG"];
 				$trans = $_POST["TRANS"];
 				$cyl = $_POST["CYLINDERS"];
 				$fuel = $_POST["FUEL"];
-
+				global $dbc;
 				//$q = "SELECT BRAND, MODEL, CITY(L), HWY(L), FUEL(L/YR), CO2 FROM $tableName WHERE ";
-				$q = "SELECT * FROM $tableName WHERE "
+				$q = "SELECT * FROM $tableName WHERE ";
 				/*if ($model) {
 					$q .= "MODEL=$model ";
 				} 
@@ -322,9 +322,10 @@
 				else */
 					//$q .= 1;
 
-				$r = mysql_query($q,$dbc);
+				$r = @mysql_query($q,$dbc);
 				if($r)
 				{
+					echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
 					echo "<select class=\"form-control\" name=\"$tableName\">\n";
 
 					echo "<table class=\"table table-striped\" name=\"results\">\n";

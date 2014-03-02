@@ -21,7 +21,7 @@
 	              </ul>
 			<br>
 			<form>
-				<fieldset>
+				<fieldset  style="margin-left:10px;">
 					<legend>Contact Information</legend>
 					
 					<u>Address</u><br>
@@ -32,12 +32,20 @@
 					<br>
 					<u>E-mail</u> : contact.carribeanada@gmail.com<br>
 					<br>
+					
+					<h4>Feedback</h4>
+					<form action="insert processibg php">
+						<textarea rows="3" cols="40" 
+							name="comments" id="comments">Insert comments here...
+						</textarea>
+						<br>
+						<input type="submit" value="Submit">
+					</form>
 				</fieldset>
 			</form>
-	    
-	<footer>
-        <p>&copy; Jake Delmas 2013</p>
 		<br>
+	<footer style="margin-left:10px;">
+        <p>&copy; Jake Delmas 2013</p>
       </footer>
 </div>
 

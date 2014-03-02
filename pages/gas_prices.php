@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Road Trip Planner</title>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script scr="js/bootstrap.js"></script>
+		<script scr="../js/bootstrap.js"></script>
 	</head>
-	<body style="background-image:url('images/retro.jpg')">
+	<body style="background-image:url('../images/retro.jpg')">
 		    
 		  
 		  <div class="container" style="background-color:white">

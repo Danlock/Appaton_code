@@ -30,11 +30,14 @@
 					<ol>
 					<li>
 					Litres per 100/km city driving, as in comparison to highway driving <br>
-					
+					</li>
+					<li>
 					Miles per gallon city driving, as in comparison to highway driving <br>
-					
+					</li>
+					<li>
 					Fuel burnt in litres per year <br>
-					
+					</li>
+					<li>
 					Estimated tailpipe carbon dioxide emissions (in grams per kilometre),
 					based on fuel type and the combined fuel consumption rating.
 					</li>

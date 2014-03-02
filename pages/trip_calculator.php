@@ -27,12 +27,12 @@
 		<div class="container" style="background-color:white">
 			
 			<ul class="nav nav-pills nav-justified">
-				<li><a href="#">Home</a></li>
-				<li ><a href="#">Gas Prices</a></li>
-				<li><a href="#">Trip Cost Calculator</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+	            <li><a href="../index.html">Home</a></li>
+	            <li ><a href="../pages/gas_prices.php">Gas Prices</a></li>            
+	            <li><a href="../pages/trip_calculator.php">Trip Cost Calculator</a></li>
+	            <li><a href="../pages/about.php">About</a></li>
+	            <li><a href="../pages/contact.php">Contact</a></li>
+	        </ul>
 			
 			</br>
 			</br>

@@ -67,7 +67,7 @@ function OnChange(dropdown)
   <div class="form-group">
 			
 			<div class="row">
-				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Vehicle CLASS </p> </div>
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> VEHICLE CLASS </p> </div>
 				<div class="col-md-3">
 					<?php
 						$col = "CLASS";
@@ -86,7 +86,7 @@ function OnChange(dropdown)
 					?>
 				</div>
 				
-				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> Engine Size </p> </div>
+				<div class="col-md-3"> <p style="font-family:Comic Sans MS, cursive, sans-serif;"> ENGINE SIZE </p> </div>
 				<div class="col-md-3">
 					<?php
 						$col = "ENG";
@@ -236,41 +236,58 @@ function OnChange(dropdown)
 
 				$model = $_POST["MODEL"];
 				$class = $_POST["CLASS"];
+				$brand = $_POST["BRAND"];
 				$eng = $_POST["ENG"];
 				$trans = $_POST["TRANS"];
 				$cyl = $_POST["CYLINDERS"];
 				$fuel = $_POST["FUEL"];
-				$q = "SELECT BRAND, MODEL, CITY(L), HWY(L), FUEL(L/YR), CO2 FROM FUELDATA";
-				//$q = "SELECT * FROM $tableName WHERE ";
-				/*if ($model) {
-					$q .= "MODEL=$model ";
-				} 
-				if ($class) {
-					$q .= ""
-				} && $eng && $trans && $cyl && $fuel)
-					//TODO: change to reflect 
-					$q .= 1;
-				else */
-					//$q .= 1;
+				$q = "SELECT BRAND, MODEL, `CITY(L)`, `HWY(L)`, `FUEL(L/YR)`, CO2 FROM FUELDATA WHERE ";
+				//$q = "SELECT DISTINCT BRAND FROM $tableName ORDER BY BRAND";
+				if ($model || $class || $eng || $trans || $cyl || $fuel || $brand) {
+					if ($model) {
+						$q .= "MODEL='$model' AND ";
+					} 
+					if ($brand) {
+						$q .= "BRAND='$brand' AND ";
+					}
+					if ($class) {
+						$q .= "CLASS='$class' AND ";
+					}
+					if ($eng) {
+						$q .= "ENG='$eng' AND ";
+					}
+					if ($trans) {
+						$q .= "TRANS='$trans' AND ";
+					}
+					if ($cyl) {
+						$q .= "CYLINDERS='$cyl' AND ";
+					}
+					if ($fuel) {
+						$q .= "FUEL='$fuel' AND ";
+					}
+					$q = substr($q,0,-5);
+				} else {
+					$q .= "1";
+				}
 
-				echo "SUCCESS!!!";
-				$r = mysql_query($q,$dbc) or die("mysql_query FAILED");
+				//echo "SUCCESS!!!";
+				$r = mysql_query($q,$dbc) or die("mysql_query FAILED" . mysql_error());
 				if($r)
 				{
-					echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
-					echo "<select class=\"form-control\" name=\"$tableName\">\n";
-
+					//echo  "SUCCESS!!!!!!!!!!!!!!!!!!!!!";
+					//echo "<select class=\"form-control\" name=\"$tableName\">\n";
+					echo "Searching for a $brand $model $class ENGINE=$eng TRANSMISSION=$trans CYLINDERS=$cyl FUEL=$fuel<br/><br/>";
 					echo "<table class=\"table table-striped\" name=\"results\">\n";
 					echo "<tr>\n";
-					echo "<td>{BRAND}</td>\n";
-					echo "<td>{MODEL}</td>\n";
-					echo "<td>{CITY (L/100Km)}</td>\n";
-					echo "<td>{HWY (L/100Km)}</td>\n";
-					echo "<td>{FUEL L/YEAR}</td>\n";
-					echo "<td>{CO2}</td>\n";
+					echo "<td>BRAND</td>\n";
+					echo "<td>MODEL</td>\n";
+					echo "<td>CITY (L/100Km)</td>\n";
+					echo "<td>HWY (L/100Km)</td>\n";
+					echo "<td>FUEL L/YEAR</td>\n";
+					echo "<td>CO2</td>\n";
 					echo "</tr>\n";		
-						echo "<tr>";
-						while ($row = mysql_fetch_array($r))
+					if ($row = mysql_fetch_array($r)) {
+						do
 						{
 							echo "<tr>\n";
 							echo "<td>{$row['BRAND']}</td>\n";
@@ -280,9 +297,12 @@ function OnChange(dropdown)
 							echo "<td>{$row['FUEL(L/YR)']}</td>\n";
 							echo "<td>{$row['CO2']}</td>\n";
 							echo "</tr>\n";
-						}
+						} while ($row = mysql_fetch_array($r));
+					} else {
+					echo "No results found for your query, try a more general search.";
+				} 
 						echo "</table>\n";
-				}
+				} 
 			}
 			?>
 			</br>

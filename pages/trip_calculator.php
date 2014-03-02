@@ -47,7 +47,7 @@
 			
 			</br>
 			
-			<form method="post" action="search.php" class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
+			<form method="post" action="trip_calculator.php" class="form" role="form" style="padding:10px;border-style:ridge;border-width:3px;">
   <div class="form-group">
 			
 			<div class="row">
@@ -59,7 +59,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
 											{
@@ -78,7 +78,7 @@
 						$r = mysql_query($q,$dbc);
 						if($r)
 						{
-							echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+							echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 
 							echo "<option selected value=\"\"> </option>\n";
 											while ($row = mysql_fetch_array($r))
@@ -103,7 +103,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -123,7 +123,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 								
 							echo "<option class=\"form-control\" selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
@@ -144,7 +144,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 									
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
@@ -165,7 +165,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-					echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+					echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 
 							echo "<option selected value=\"\"> </option>\n";
 									while ($row = mysql_fetch_array($r))
@@ -186,7 +186,7 @@
 					$r = mysql_query($q,$dbc);
 					if($r)
 					{
-						echo "<select id=\"$col\" class=\"form-control\" name=\"$tableName\">\n";
+						echo "<select id=\"$col\" class=\"form-control\" name=\"$col\">\n";
 							echo "<option selected value=\"\"> </option>\n";
 										while ($row = mysql_fetch_array($r))
 										{
@@ -205,7 +205,7 @@
 			</br>
 			</br>
 			</div>
-			<?php require("./search.php");?>
+			<?php include("./search.php");?>
 			</br>
 			</br>
 			</br>

@@ -215,11 +215,12 @@ function OnChange(dropdown)
 			</br>
 			</br>
 
-			<button type="submit" name="Search" value="Search" class="btn btn-default">Search</button>
+			<button type="submit" name="Search" value="Search" class="btn btn-info col-md-12">Search</button>
 
 			</br>
 			</br>
 			</div>
+			</form>
 			<?php
 			if (isset($_POST['Search'])) {
 				

@@ -5,14 +5,14 @@
 		<title>Road Trip Planner</title>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-		<script scr="../js/bootstrap.js"></script>
+		<script src="../js/bootstrap.js"></script>
 	</head>
 	<body style="background-image:url('../images/retro.jpg')">
 		    
 		  
-		  <div class="container" style="background-color:white">
+		  <div class="container" style="background-color:white;padding:25px">
 	         
-	              <ul class="nav nav-pills nav-justified">
+	              <ul class="nav nav-pills nav-justified navbar-fixed-top">
 	                <li><a href="../index.html">Home</a></li>
 	                <li ><a href="gas_prices.php">FAQ & Stats</a></li>            
 	                <li><a href="trip_calculator.php">Trip Cost Calculator</a></li>

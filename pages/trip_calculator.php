@@ -6,7 +6,33 @@
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="../js/bootstrap.js"></script>
-		
+
+		  	<style>
+      #map_canvas {
+        width: 500px;
+        height: 400px;
+		  background-color: #CCC;
+      }
+    </style>
+	
+			  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+		  <script>
+  function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+	
+
 		<?php
 		DEFINE ('DB_USER', 'cs4477216');
 		DEFINE ('DB_PASSWORD', 'malQuic7');
@@ -222,6 +248,94 @@ function OnChange(dropdown)
 			</br>
 			</div>
 			</form>
+			
+			 
+			 <div class="row text-center"style="text-decoration:underline">
+			 <h3> Route Selector (Coming Soon..!) </h3>
+			 </div>
+			 
+			<div class="row">
+							<div class="col-md-6"> 
+
+			 <div id="map_canvas" style="text-align:center;"></div>
+			 </div>
+			 
+			 <div class="col-md-6"> 
+
+			 
+			 
+			 <h3 style="text-align:center;"> Please Select Your Route </h3>
+			 
+			 <div class="col-md-3" style="text-align:center;">
+			 <p> Start Location </p>
+			 </div>
+			 
+			 <div class="col-md-9" style="text-align:center;">
+			 <input type="text" class="form-control" placeholder="Start Location">
+
+			 </div>
+			 
+			 </div>
+			 
+			 
+			 
+			  <div class="col-md-6"> 
+
+			 
+			 
+			 
+			 
+			 <div class="col-md-3" style="text-align:center;">
+			 </br>
+			 <p> End Location </p>
+			 </div>
+			 
+			 <div class="col-md-9" style="text-align:center;">
+			 </br>
+			 <input type="text" class="form-control" placeholder="End Location">
+
+			 </div>
+			 
+			 </div>
+			 
+			 
+			 
+			   <div class="col-md-6 text-center"> 
+
+			 
+			 
+			 
+			 
+			 </br>
+			 
+			 <button type="button" class="btn btn-info">Submit</button>
+			 
+			 </div>
+			 
+			 
+			   <div class="col-md-6"> 
+
+			 
+			 
+			 
+			 
+			 <div class="col-md-3" style="text-align:center;">
+			 </br>
+			 <p> Trip Cost </p>
+			 </div>
+			 
+			 <div class="col-md-9" style="text-align:center;">
+			 </br>
+			 <input type="text" class="form-control" placeholder="$0.00">
+
+			 </div>
+			 
+			 </div>
+			 
+			 
+			 
+				</div>
+			
 			<?php
 			if (isset($_POST['Search'])) {
 				DEFINE ('DB_USER', 'cs4477216');

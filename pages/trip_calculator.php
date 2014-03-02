@@ -205,7 +205,7 @@
 			</br>
 			</br>
 			</div>
-			
+			<?php require("./search.php");?>
 			</br>
 			</br>
 			</br>

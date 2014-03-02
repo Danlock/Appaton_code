@@ -160,7 +160,15 @@
 		<div class="row">				
 				<div class="col-md-12" > <h3>Graph Showing Most Fuel Efficient Vehicles by Brand</h3> </div>
 				</div>
-								<div class="col-md-12"> <img src="../graphs/fuel_efficiency_by_brand.png" alt="..." class="img-rounded" id="classpic" width="600" height="600"> </div>
+								<div class="col-md-12"> <img src="../graphs/fuel_efficiency_by_brand.png" alt="..." class="img-rounded" id="classpic" width="1100" height="800"> </div>
+
+				</br>
+				
+				
+				<div class="row">				
+				<div class="col-md-12" > <h3>Graph Showing Most Environmental Friendly Vehicles by Brand</h3> </div>
+				</div>
+								<div class="col-md-12"> <img src="../graphs/co2_emissions_by_brand.png" alt="..." class="img-rounded" id="classpic" width="1100" height="600"> </div>
 
 				</br>
 		

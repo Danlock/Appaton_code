@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Distance Matrix service</title>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      #map-canvas {
-        height: 100%;
-        width: 50%;
-      }
-      #content-pane {
-        float:right;
-        width:48%;
-        padding-left: 2%;
-      }
-      #outputDiv {
-        font-size: 11px;
-      }
-    </style>
-    <script>
 var map;
 var geocoder;
 var bounds = new google.maps.LatLngBounds();
 var markersArray = [];
 
-var origin1 = 'b3h4n5';
+var origin1;
 var origin2 = 'B3h4a5';
-var destinationA = 'b3h3c3';
+var destinationA;
 var destinationB = new google.maps.LatLng(50.087, 14.421);
 
 var destinationIcon = 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|FF0000|000000';
@@ -47,6 +21,8 @@ function initialize() {
 }
 
 function calculateDistances() {
+  origin1 = document.getElementById('startLoc').value;
+  destinationA = document.getElementById('endLoc').value;
   var service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
     {
@@ -66,6 +42,13 @@ function callback(response, status) {
     var origins = response.originAddresses;
     var destinations = response.destinationAddresses;
     var outputDiv = document.getElementById('outputDiv');
+    var tripCost = document.getElementById('tripCost');
+    var distance = document.getElementById('distance');
+    var duration = document.getElementById('duration');
+        var gas = document.getElementById('gas');
+
+    document.getElementById('startLoc').value = origins[0];
+    document.getElementById('endLoc').value = destinations[0];
     outputDiv.innerHTML = '';
     deleteOverlays();
     var results = response.rows[0].elements;
@@ -75,6 +58,10 @@ function callback(response, status) {
             + ': ' + results[0].distance.text + ' in '
             + results[0].duration.text 
             + ' costing ' + results[0].distance.value +  '<br>';
+            //TODO: ADD SPECIFIC CAR's L/KM
+        tripCost.value = gas.value*results[0].distance.value;
+        distance.value = results[0].distance.text;
+        duration.value = results[0].duration.text;
   }
 }
 
@@ -110,23 +97,3 @@ function deleteOverlays() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-  </head>
-  <body>
-    <div id="content-pane">
-      <div id="inputs">
-        <pre>
-var origin1 = new google.maps.LatLng(55.930, -3.118);
-var origin2 = 'Greenwich, England';
-var destinationA = 'Stockholm, Sweden';
-var destinationB = new google.maps.LatLng(50.087, 14.421);
-        </pre>
-        <p><button type="button" onclick="calculateDistances();">Calculate
-          distances</button></p>
-      </div>
-      <div id="outputDiv"></div>
-    </div>
-    <div id="map-canvas"></div>
-  </body>
-</html>

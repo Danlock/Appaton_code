@@ -8,28 +8,30 @@
 		<script src="../js/bootstrap.js"></script>
 
 		  	<style>
-      #map_canvas {
+      #map-canvas {
         width: 500px;
         height: 400px;
 		  background-color: #CCC;
       }
     </style>
 	
-			  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<!-- 		  // <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script type="text/javascript" src="../js/distance.js"></script>
 
-		  <script>
-  function initialize() {
-        var map_canvas = document.getElementById('map_canvas');
-        var map_options = {
-          center: new google.maps.LatLng(44.5403, -78.5463),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(map_canvas, map_options)
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
+		  <!-- <script>
+		    function initialize() {
+		          var map_canvas = document.getElementById('map_canvas');
+		          var map_options = {
+		            center: new google.maps.LatLng(44.5403, -78.5463),
+		            zoom: 8,
+		            mapTypeId: google.maps.MapTypeId.ROADMAP
+		          }
+		          var map = new google.maps.Map(map_canvas, map_options)
+		        }
+		        google.maps.event.addDomListener(window, 'load', initialize);
+		  </script>
+		   -->
 
 	
 
@@ -256,8 +258,10 @@ function OnChange(dropdown)
 			 
 			<div class="row">
 							<div class="col-md-6"> 
-
-			 <div id="map_canvas" style="text-align:center;"></div>
+			        <p><button type="button" onclick="calculateDistances();">Calculate
+          distances</button></p>
+          <div id="outputDiv"></div>
+			<div id="map-canvas" style="text-align:center;"></div>
 			 </div>
 			 
 			 <div class="col-md-6"> 
@@ -271,7 +275,7 @@ function OnChange(dropdown)
 			 </div>
 			 
 			 <div class="col-md-9" style="text-align:center;">
-			 <input type="text" class="form-control" placeholder="Start Location">
+			 <input type="text" class="form-control"  id="startLoc" placeholder="Start Location">
 
 			 </div>
 			 
@@ -292,13 +296,24 @@ function OnChange(dropdown)
 			 
 			 <div class="col-md-9" style="text-align:center;">
 			 </br>
-			 <input type="text" class="form-control" placeholder="End Location">
+			 <input type="text" class="form-control" id="endLoc" placeholder="End Location">
+
+			 </div>
+			 <div class="row">
+			<div class="col-md-3" style="text-align:center;">
+			 </br>
+			 <p> Gas Price </p>
+			 </div>
+			 
+			 <div class="col-md-9" style="text-align:center;">
+			 </br>
+			 <input type="text" class="form-control" id="gas" placeholder="Gas Price">
 
 			 </div>
 			 
 			 </div>
 			 
-			 
+			 </div>
 			 
 			   <div class="col-md-6 text-center"> 
 
@@ -326,8 +341,26 @@ function OnChange(dropdown)
 			 
 			 <div class="col-md-9" style="text-align:center;">
 			 </br>
-			 <input type="text" class="form-control" placeholder="$0.00">
+			 <input type="text" class="form-control" id="tripCost" placeholder="$0.00">
 
+			 </div>
+			 
+			 <div class="col-md-3" style="text-align:center;">
+			 </br>
+			 <p> Distance(km) </p>
+			 </div>
+			 <div class="col-md-9" style="text-align:center;">
+			 </br>
+			 <input type="text" class="form-control" id="distance" placeholder="$0.00">
+			 </div>
+			 
+			 <div class="col-md-3" style="text-align:center;">
+			 </br>
+			 <p> Duration </p>
+			 </div>
+			 <div class="col-md-9" style="text-align:center;">
+			 </br>
+			 <input type="text" class="form-control" id="duration" placeholder="$0.00">
 			 </div>
 			 
 			 </div>
@@ -452,3 +485,6 @@ function OnChange(dropdown)
 				<p>&copy; carribeanada 2014</p>
 			</footer>
 		</div>
+
+	</body>
+</html>

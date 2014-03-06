@@ -7,7 +7,29 @@
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" /> -->
-				<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map-canvas {
+        height: 50%;
+        width: 25%;
+      }
+      #content-pane {
+        float:right;
+        width:48%;
+        padding-left: 2%;
+      }
+      #outputDiv {
+        font-size: 11px;
+      }
+    </style>
+    		<script type="text/javascript" src="./js/distance.js"></script>
    	  <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> -->
 	</head>
 	<body style="background-image:url('images/retro.jpg')">
@@ -46,18 +68,35 @@ and also how damaging it is to the environment. A future goal in the making is t
  </div>
  
  
- 				<div class="col-md-6 text-center"> <img src="images/gas-prices.jpg" alt="..." class="img-rounded" id="classpic" width="500" height="250"> </div>
+ 				<div class="col-md-6 text-center"><img src="images/gas-prices.jpg" alt="..." class="img-rounded" id="classpic" width="500" height="250"></div>
 
  
  </div>
  
  </fieldset>
-				  
-	    
+ 
+ <div class="row">
+<div id="content-pane">
+      <div id="inputs">
+        <pre>
+var origin1 = new google.maps.LatLng(55.930, -3.118);
+var origin2 = 'Greenwich, England';
+var destinationA = 'Stockholm, Sweden';
+var destinationB = new google.maps.LatLng(50.087, 14.421);
+        </pre>
+        <p><button type="button" onclick="calculateDistances();">Calculate
+          distances</button></p>
+      </div>
+      <div id="outputDiv"></div>
+    </div>
+    <div id="map-canvas"></div>
+    </div>
 	<footer>
         <p>&copy; carribeanada 2014</p>
       </footer>
 </div>
+		  
+
 <!-- 	<div id="map" style="width: 600px; height: 400px"></div>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 <script>

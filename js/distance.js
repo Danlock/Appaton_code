@@ -1,3 +1,4 @@
+//TODO: add route overlay
 var map;
 var geocoder;
 var bounds = new google.maps.LatLngBounds();
@@ -59,7 +60,13 @@ function callback(response, status) {
             + results[0].duration.text 
             + ' costing ' + results[0].distance.value +  '<br>';
             //TODO: ADD SPECIFIC CAR's L/KM
-        tripCost.value = gas.value*results[0].distance.value;
+
+           var litres = Number($("input:checked").val())/100;
+           console.log("Length",$("input:checked").length);
+           console.log("Value",$("input:checked").val());
+          console.log(litres);
+          var s = (gas.value*(results[0].distance.value/1000)*litres);
+        tripCost.value ="$" + s.toFixed(2);
         distance.value = results[0].distance.text;
         duration.value = results[0].duration.text;
   }

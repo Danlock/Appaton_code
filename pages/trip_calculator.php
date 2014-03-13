@@ -14,7 +14,7 @@
 		  background-color: #CCC;
       }
     </style>
-	
+
 	<!-- 		  // <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script type="text/javascript" src="../js/distance.js"></script>
@@ -258,8 +258,7 @@ function OnChange(dropdown)
 			 
 			<div class="row">
 							<div class="col-md-6"> 
-			        <p><button type="button" onclick="calculateDistances();">Calculate
-          distances</button></p>
+			        
           <div id="outputDiv"></div>
 			<div id="map-canvas" style="text-align:center;"></div>
 			 </div>
@@ -323,7 +322,7 @@ function OnChange(dropdown)
 			 
 			 </br>
 			 
-			 <button type="button" class="btn btn-info">Submit</button>
+			<p><button type="button" onclick="calculateDistances();">Calculate distances</button></p>
 			 
 			 </div>
 			 
@@ -364,7 +363,7 @@ function OnChange(dropdown)
 			 </div>
 			 
 			 </div>
-			 
+
 			 
 			 
 				</div>
@@ -450,6 +449,7 @@ function OnChange(dropdown)
 					
 					echo "<table class=\"table table-striped\" name=\"results\">\n";
 					echo "<tr>\n";
+					echo "<td>Select Your Car</td>\n";
 					echo "<td>BRAND</td>\n";
 					echo "<td>MODEL</td>\n";
 					echo "<td>CITY (L/100Km)</td>\n";
@@ -461,6 +461,7 @@ function OnChange(dropdown)
 						do
 						{
 							echo "<tr>\n";
+							echo "<td><input type='radio' name='check' value={$row['HWY(L)']} /></td>\n";
 							echo "<td>{$row['BRAND']}</td>\n";
 							echo "<td>{$row['MODEL']}</td>\n";
 							echo "<td>{$row['CITY(L)']}</td>\n";
